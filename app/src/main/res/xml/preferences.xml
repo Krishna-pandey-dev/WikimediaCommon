@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="pref_sync"
+        android:title="@string/sync_pref"
+        android:summary="@string/sync_pref_summary"
+        android:defaultValue="true"/>
+
+
+    <ListPreference
+        android:key="pref_synconnectionsType"
+        android:title="@string/pref_synconnectionsType"
+        android:entries="@array/Theme_type_enteries"
+        android:entryValues="@array/Theme_type_valuess"
+        android:defaultValue="@string/pref_synconnectionsType_defaultValue"
+        android:summary="@string/sync_pref_summary"/>
+
+
+
+</PreferenceScreen>
