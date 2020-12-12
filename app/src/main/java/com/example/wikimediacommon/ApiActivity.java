@@ -14,7 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.wikimediacommon.Adapter.ItemTypeAdapter;
-import com.example.wikimediacommon.Models.Imageinfo;
+import com.example.wikimediacommon.Models.Imagedata;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -33,7 +33,7 @@ public class ApiActivity extends AppCompatActivity {
                 Log.d("yes", response);
                 GsonBuilder gsonBuilder = new GsonBuilder();
                 Gson gson = gsonBuilder.create();
-                Imageinfo datas = gson.fromJson(response, Imageinfo.class);
+                Imagedata datas = gson.fromJson(response, Imagedata.class);
                 recyclerView.setAdapter(new ItemTypeAdapter(ApiActivity.this, datas));
 
             }
