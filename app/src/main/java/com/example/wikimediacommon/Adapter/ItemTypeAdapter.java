@@ -13,15 +13,15 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.wikimediacommon.Models.Imageinfo;
+import com.example.wikimediacommon.Models.Imagedata;
 import com.example.wikimediacommon.R;
 
 
 public class ItemTypeAdapter extends RecyclerView.Adapter<ItemTypeAdapter.ItemtypeViewHolder> {
 private Context context;
-private Imageinfo dataretrivals;
+private Imagedata dataretrivals;
 
-    public ItemTypeAdapter(Context context, Imageinfo dataretrivals) {
+    public ItemTypeAdapter(Context context, Imagedata dataretrivals) {
         this.context = context;
         this.dataretrivals = dataretrivals;
     }
@@ -37,10 +37,10 @@ private Imageinfo dataretrivals;
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ItemtypeViewHolder holder, int position) {
-        Imageinfo data = dataretrivals;
+        Imagedata data = dataretrivals;
         try
         {
-            holder.listView.addView((View) data.getQuery().getPages().get35770().getImageinfo());
+
         }
         catch (NullPointerException ignored)
         {
