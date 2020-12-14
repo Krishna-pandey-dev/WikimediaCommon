@@ -26,6 +26,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.navigation.NavigationView;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -36,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private String type = "";
     RecyclerView.LayoutManager layoutManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,13 +73,17 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.explore:
                         Intent apintent = new Intent(HomeActivity.this,ApiActivity.class);
                         startActivity(apintent);
-                        Toast.makeText(HomeActivity.this, "Explore", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HomeActivity.this, "Please Wait", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.bookmarks:
-                        Toast.makeText(HomeActivity.this, "Todays Deal", Toast.LENGTH_SHORT).show();
+                        Intent articleintent = new Intent(HomeActivity.this,ArticleApiActivity.class);
+                        startActivity(articleintent);
+                        Toast.makeText(HomeActivity.this, "Please Wait... Loading", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.Review:
-                        Toast.makeText(HomeActivity.this, "Your Orders", Toast.LENGTH_SHORT).show();
+                        Intent categoryintent = new Intent(HomeActivity.this,CategoryApiActivity.class);
+                        startActivity(categoryintent);
+                        Toast.makeText(HomeActivity.this, "Explore", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.settings:
                         if(!type.equals("Admin")) {
@@ -128,10 +136,8 @@ public class HomeActivity extends AppCompatActivity {
         TextView useremail = headerView.findViewById(R.id.user_profile_email);
         CircleImageView profileimageview = headerView.findViewById(R.id.user_profile_image);
 
-        recyclerView = findViewById(R.id.recycler_menu);
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+
+
 
 
     }

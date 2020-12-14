@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wikimediacommon">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +11,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.WikimediaCommon">
-        <activity android:name=".ApiActivity"></activity>
+        <activity android:name=".CategoryApiActivity" />
+        <activity android:name=".ArticleApiActivity" />
+        <activity android:name=".ApiActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".IntroActivity">
             <intent-filter>

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
+    android:padding="20dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     android:id="@+id/card"
@@ -17,43 +19,70 @@
 
             <ImageView
                 android:id="@+id/imagetype1"
-                android:layout_width="379dp"
-                android:layout_height="300dp"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
+                android:contentDescription="Image"
                 android:paddingHorizontal="20dp"
-                android:src="@drawable/imagetoday"
-                android:contentDescription="Image" />
+                android:src="@drawable/imagetoday" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/question"
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:text=" Terra Ronca State Park"
+                    android:textColor="#1a1a1a"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                android:id="@+id/hide"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:layout_gravity="right"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
-                android:paddingStart="20dp"
-                android:text=" Terra Ronca State Park"
+                android:text=" Hide"
+                android:visibility="invisible"
                 android:textColor="#1a1a1a"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textSize="20dp" />
+            </LinearLayout>
 
-
-            <TextView
-                android:id="@+id/imagediscription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-medium"
-                android:paddingStart="20dp"
-                android:text="@string/LoremIpsem"
-                android:textColor="#1a1a1a" />
-
+            <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <WebView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/webview"
+                    android:fitsSystemWindows="true"
+                    android:background="@drawable/logo"
+                    android:clickable="true"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="horizontal"
+                    android:contextClickable="true"
+                    tools:ignore="WebViewLayout" />
+                </ScrollView>
+<!--            <TextView-->
+<!--                android:id="@+id/imagediscription"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:fontFamily="sans-serif-medium"-->
+<!--                android:paddingStart="20dp"-->
+<!--                android:text="@string/LoremIpsem"-->
+<!--                android:textColor="#1a1a1a" />-->
 
         </LinearLayout>
+    </ScrollView>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Listview"/>
-</androidx.cardview.widget.CardView>
+

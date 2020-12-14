@@ -1,7 +1,6 @@
 
 package com.example.wikimediacommon.Models;
 
-import com.example.wikimediacommon.CategoryModel.Continue;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
