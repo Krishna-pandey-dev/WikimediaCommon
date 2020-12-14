@@ -60,6 +60,7 @@ public class ApiActivity extends AppCompatActivity {
     }
 
 
+
     public void fetchData(){
         url = "https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=timestamp%7Cuser%7Curl&generator=categorymembers&gcmtype=file&gcmtitle=Category:Featured_pictures_on_Wikimedia_Commons&format=json&gcmcontinue=%20"+nextPageKey;
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
